@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+</head>
+<body>
+    <form action="{% url 'cars' %}" method="post"> {% csrf_token %}
+        <div>
+            {{ form.as_p }}
+            <input type="submit" value="Применить">
+        </div>
+    </form>
+
+
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th> Бортовой номер </th>
+                    <th> Модель </th>
+                    <th> Макс. грузоподъемность (т) </th>
+                    <th> Текущий вес (т) </th>
+                    <th> Перевес (%) </th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for car in car %}
+                <tr>
+                    <td> {{ car.number }} </td>
+                    <td> {{ car.name }} </td>
+                    <td> {{ car.max_weight }} </td>
+                    <td> {{ car.current_weight }} </td>
+                    <td> {{ car.overweight }} </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
