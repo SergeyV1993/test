@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'xu)nx%ib4itmxylr!fx2(&r0c5lbcb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['cryptic-bayou-59690.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
